@@ -75,15 +75,25 @@ clustering_fitting_assignment/
 │ ├─ categorical_top10_co2_2019.png
 
 │ ├─ relational_gdp_vs_co2_2019.png
+
 │ ├─ heatmap_2019.png
+
 │ ├─ boxplot_co2_by_gdp_decile_2019.png
+
 │ ├─ kmeans_elbow.png
+
 │ ├─ kmeans_k*_pca.png
+
 │ ├─ pairplot_moments.png
+
 │ ├─ regression_actual_vs_predicted_ridge.png
+
 │ ├─ country_moments.csv
+
 │ └─ descriptive_co2_per_capita.txt
+
 ├─ assessment.txt # Short assessment summary
+
 └─ README.md # Project documentation
 
 
