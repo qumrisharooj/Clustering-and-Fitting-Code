@@ -1,133 +1,100 @@
-Clustering and Fitting Analysis of Global CO2 Emissions
+# Clustering and Fitting Analysis of Global CO2 Emissions
 
-Author: QUMRISH AROOJ
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![License](https://img.shields.io/badge/License-Educational-lightgrey)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-Overview
+**Author:** QUMRISH AROOJ
+---
 
-This repository contains the code and outputs for a Clustering and Fitting analysis performed on global CO2 emissions data. The project demonstrates how to explore and model country-level CO2 per capita patterns using statistical summaries, K-Means clustering, and regression techniques.
+## Overview
 
-The assignment includes data cleaning, descriptive statistics, visualization, clustering, regression modeling, and report generation.
+This project demonstrates a **comprehensive analysis of global CO2 emissions per capita** across countries using **statistical analysis, clustering (K-Means), and regression techniques**.  
 
-Dataset
+The main goals are:  
 
-The analysis uses the OWID CO2 Dataset (1990–2019), which contains country-level information on:
+- Explore and visualize CO2 emission trends.  
+- Cluster countries based on CO2 per capita patterns.  
+- Predict CO2 per capita using GDP and population.  
+- Generate professional plots and CSV outputs for reporting.  
 
-CO2 emissions (co2, co2_per_capita)
+**Dataset:** [OWID CO2 Dataset (1990–2019)](https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions)  
 
-Consumption-based CO2 (consumption_co2)
+---
 
-Population and GDP
+## Table of Contents
 
-Greenhouse gas indicators (total_ghg, ghg_per_capita)
+1. [Project Features](#project-features)  
+2. [Repository Structure](#repository-structure)  
+3. [Getting Started](#getting-started)  
+4. [Usage](#usage)  
+5. [Outputs](#outputs)  
+6. [Insights](#insights)  
+7. [License](#license)  
 
-Energy consumption indicators (primary_energy_consumption, energy_per_capita, energy_per_gdp)
+---
 
-Note: Aggregate rows such as OWID regions were removed to focus on individual countries.
+## Project Features
 
-Repository Structure
+- **Data Cleaning & Preparation**  
+  - Filtered data from 1990–2019  
+  - Removed OWID region aggregates  
+  - Dropped missing values in key columns  
+
+- **Statistical Analysis**  
+  - Calculated per-country moments: mean, std, skewness, kurtosis  
+  - Descriptive summary of CO2 per capita  
+
+- **Visualizations**  
+  1. Bar chart: Top 10 CO2 emitting countries  
+  2. Scatter plot: CO2 per capita vs GDP  
+  3. Heatmap: Correlation among numeric features  
+  4. Boxplot: CO2 per capita by GDP deciles  
+
+- **Clustering (K-Means)**  
+  - Features: mean CO2 per capita, std CO2 per capita, optional mean GDP  
+  - Optimal number of clusters selected using silhouette score and elbow method  
+  - PCA projection used for 2D visualization of clusters  
+
+- **Regression Analysis**  
+  - Linear Regression and Ridge Regression  
+  - Features: log-transformed GDP and log-transformed population  
+  - Evaluation metrics: RMSE, MAE, R²  
+
+---
+
+## Repository Structure
+
 clustering_fitting_assignment/
 │
-├─ outputs/                     # Generated plots and CSV files
-│   ├─ categorical_top10_co2_2019.png
-│   ├─ relational_gdp_vs_co2_2019.png
-│   ├─ heatmap_2019.png
-│   ├─ boxplot_co2_by_gdp_decile_2019.png
-│   ├─ kmeans_elbow.png
-│   ├─ kmeans_k*_pca.png
-│   ├─ pairplot_moments.png
-│   ├─ regression_actual_vs_predicted_ridge.png
-│   ├─ country_moments.csv
-│   └─ descriptive_co2_per_capita.txt
-│
-├─ clustering_fitting_assignment.py  # Main Python script
-├─ README.md                        # This file
-└─ assessment.txt                   # Short assessment summary
+├─ clustering_fitting_assignment.py # Main Python script
+├─ outputs/ # Generated plots and CSVs
+│ ├─ categorical_top10_co2_2019.png
+│ ├─ relational_gdp_vs_co2_2019.png
+│ ├─ heatmap_2019.png
+│ ├─ boxplot_co2_by_gdp_decile_2019.png
+│ ├─ kmeans_elbow.png
+│ ├─ kmeans_k*_pca.png
+│ ├─ pairplot_moments.png
+│ ├─ regression_actual_vs_predicted_ridge.png
+│ ├─ country_moments.csv
+│ └─ descriptive_co2_per_capita.txt
+├─ assessment.txt # Short assessment summary
+└─ README.md # Project documentation
 
-Requirements
 
-The code was developed using Python 3.11 and the following libraries:
 
-numpy
+## Getting Started
 
-pandas
+### Prerequisites
 
-matplotlib
+- Python 3.7+  
+- Required libraries:  
 
-seaborn
-
-scipy
-
-scikit-learn
-
-You can install the dependencies using pip:
-
+```bash
 pip install numpy pandas matplotlib seaborn scipy scikit-learn
 
-Usage
-
-Clone the repository:
-
-git clone https://github.com/your-username/clustering_fitting_assignment.git
-cd clustering_fitting_assignment
-
-
-Place the OWID CO2 dataset CSV (owid-co2-data.csv) in the repository folder.
-
-Run the Python script:
 
 python clustering_fitting_assignment.py
 
 
-All outputs (plots, CSVs, metrics) will be saved in the outputs/ folder.
-
-Analysis Highlights
-
-Descriptive Statistics: Computed country-level moments of CO2 per capita, including mean, standard deviation, skewness, and kurtosis.
-
-Visualization:
-
-Bar chart of top 10 CO2 emitting countries
-
-Scatter plot of CO2 per capita vs GDP
-
-Heatmap of correlations
-
-Boxplot of CO2 per capita by GDP deciles
-
-Clustering:
-
-K-Means clustering on country-level CO2 patterns
-
-Elbow and silhouette analysis to select the optimal number of clusters
-
-PCA projection to visualize clusters
-
-Regression (Fitting):
-
-Linear and Ridge regression to predict CO2 per capita using log-transformed GDP and population
-
-Performance metrics: R², RMSE, MAE
-
-Outputs: All plots and metrics are saved in the outputs/ folder.
-
-Files in Outputs
-
-country_moments.csv — Per-country CO2 per capita moments
-
-categorical_top10_co2_2019.png — Top 10 countries by CO2
-
-relational_gdp_vs_co2_2019.png — CO2 per capita vs GDP
-
-heatmap_2019.png — Correlation heatmap
-
-boxplot_co2_by_gdp_decile_2019.png — CO2 per capita by GDP decile
-
-kmeans_elbow.png — Elbow plot for clustering
-
-kmeans_k*_pca.png — PCA visualization of clusters
-
-pairplot_moments.png — Pairplot of CO2 per capita moments
-
-regression_actual_vs_predicted_ridge.png — Actual vs predicted CO2 per capita
-
-descriptive_co2_per_capita.txt — Summary statistics
