@@ -67,9 +67,13 @@ The main goals are:
 
 clustering_fitting_assignment/
 │
+
 ├─ clustering_fitting_assignment.py # Main Python script
+
 ├─ outputs/ # Generated plots and CSVs
+
 │ ├─ categorical_top10_co2_2019.png
+
 │ ├─ relational_gdp_vs_co2_2019.png
 │ ├─ heatmap_2019.png
 │ ├─ boxplot_co2_by_gdp_decile_2019.png
